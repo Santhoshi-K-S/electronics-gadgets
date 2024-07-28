@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/electronics-gadgets/static/css/main.6d1b5269.css",
+    "main.js": "/electronics-gadgets/static/js/main.330c2d08.js",
+    "static/js/453.95192f38.chunk.js": "/electronics-gadgets/static/js/453.95192f38.chunk.js",
+    "static/media/About.jpg": "/electronics-gadgets/static/media/About.63bd8384681c35d00121.jpg",
+    "index.html": "/electronics-gadgets/index.html",
+    "main.6d1b5269.css.map": "/electronics-gadgets/static/css/main.6d1b5269.css.map",
+    "main.330c2d08.js.map": "/electronics-gadgets/static/js/main.330c2d08.js.map",
+    "453.95192f38.chunk.js.map": "/electronics-gadgets/static/js/453.95192f38.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d1b5269.css",
+    "static/js/main.330c2d08.js"
+  ]
+}
