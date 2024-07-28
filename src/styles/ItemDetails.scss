@@ -1,0 +1,166 @@
+/* ItemDetails.scss */
+.item-details {
+    padding: 50px 20px;
+    background-color: #e9e6e6;
+    text-align: center;
+    overflow: hidden;
+}
+
+.item-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 40px auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    transition: all 0.3s ease;
+    max-width: 80%
+}
+
+.item-card.even .item-content {
+    order: 1;
+}
+
+.item-card.odd .item-content {
+    order: 2;
+}
+
+.item-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    transition: transform 0.3s ease;
+    flex: 1;
+}
+
+.item-image-wrapper.image-left {
+    order: 2;
+    margin-left: 40px;
+}
+
+.item-image-wrapper.image-right {
+    order: 1;
+    margin-right: 40px;
+}
+
+.item-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-card:hover .item-image {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.item-content {
+    text-align: left;
+    flex: 2;
+    max-width: 600px;
+    min-height: 350px;
+}
+
+.item-content h3 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.item-content h3:hover {
+    color: #1f2020;
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ddd;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1em;
+}
+
+.tabs button.active {
+    background-color: #1f2020;
+    color: #fff;
+}
+
+.tabs button:hover {
+    background-color: #6f7172;
+    color: #fff;
+}
+
+.tab-content {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active-content {
+    display: block;
+}
+
+.item-content p,
+.item-content ul {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.item-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.usp {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+}
+
+.usp span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #1f2020;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}

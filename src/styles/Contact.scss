@@ -1,0 +1,101 @@
+/* Contact.scss */
+.contact-section {
+    padding: 50px 20px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); // Dark overlay
+      z-index: 1;
+    }
+  
+    .contact-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6); // Slightly darker overlay
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  
+      h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        color: #ddd;
+      }
+  
+      form {
+        .form-group {
+          margin-bottom: 20px;
+  
+          label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: #ddd;
+          }
+  
+          input,
+          textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          }
+  
+          textarea {
+            resize: none;
+          }
+        }
+  
+        button {
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 1.2em;
+          color: #fff;
+          background-color: #ff5722;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+  
+          &:hover {
+            background-color: #e64a19;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .contact-section {
+      padding: 70px 50px;
+    }
+  
+    .contact-content {
+      padding: 40px;
+    }
+  }
+  
