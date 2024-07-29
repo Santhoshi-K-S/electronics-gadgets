@@ -25,13 +25,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "install": "npm install --legacy-peer-deps",
+    "build": "npm run install && npm run build:frontend && npm run build:backend",
+    "build:frontend": "npm install --legacy-peer-deps && npm run build",
+    "build:backend": "cd server && npm install --legacy-peer-deps && npm run build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "install": "npm install --legacy-peer-deps"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
