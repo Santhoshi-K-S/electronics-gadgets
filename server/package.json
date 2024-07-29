@@ -4,6 +4,7 @@
     "description": "Chat server for electronics gadgets website",
     "main": "server.js",
     "scripts": {
+      "build": "echo \"No build step specified\"",
       "start": "node server.js"
     },
     "dependencies": {
