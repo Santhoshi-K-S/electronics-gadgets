@@ -4,7 +4,7 @@ A visually attractive webpage for the electronic gadget products.
 
 ## Getting Started
 git clone [repo]
-cd [dir]
+#cd [dir]
 
 ### `npm start`
 
