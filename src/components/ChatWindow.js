@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Fade from 'react-reveal/Fade';
 import '../styles/ChatWindow.scss';
 
-const socket = io('http://localhost:4000');
+const socket = io('https://electronics-gadgets-serv.vercel.app');
 
 const ChatWindow = ({ addMessage }) => {
     const [message, setMessage] = useState('');

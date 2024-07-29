@@ -8,7 +8,7 @@ const ItemDetails = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/items")
+      .get("https://electronics-gadgets-serv.vercel.app/api/items")
       .then((response) => {
         setItems(response.data);
       })

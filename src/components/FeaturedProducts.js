@@ -10,7 +10,7 @@ const FeaturedProducts = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/featuredProducts")
+      .get("https://electronics-gadgets-serv.vercel.app/api/featuredProducts")
       .then((response) => {
         setFeaturedProducts(response.data);
       })
