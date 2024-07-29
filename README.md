@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# NextGenGadjets
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A visually attractive webpage for the electronic gadget products. 
 
-## Available Scripts
-
-In the project directory, you can run:
+## Getting Started
+git clone [repo]
+cd [dir]
 
 ### `npm start`
 
