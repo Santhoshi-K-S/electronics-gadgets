@@ -3,8 +3,12 @@
 A visually attractive webpage for the electronic gadget products. 
 
 ## Getting Started
+
+The fully functioning website can run alongside the Express server service - https://github.com/Santhoshi-K-S/electronics-gadgets-serv
+
 git clone [repo]
-#cd [dir]
+
+cd [dir]
 
 ### `npm start`
 
