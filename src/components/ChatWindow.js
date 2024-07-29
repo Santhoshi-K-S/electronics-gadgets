@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 import "../styles/ChatWindow.scss";
+import '../styles/Navbar.scss';
 
 // Initialize socket connection
 const socket = io("https://electronics-gadgets-serv.vercel.app");
@@ -53,6 +54,9 @@ const ChatWindow = () => {
     <div className="container">
       <div className="navbar">
         <h1>Interactive Real-Time Chat</h1>
+        <ul className="navbar-links">
+        <li><a href="/">Home</a></li>
+      </ul>
       </div>
       <div className="chat-box border rounded p-3 mb-3">
         <div className="messages mb-3">
