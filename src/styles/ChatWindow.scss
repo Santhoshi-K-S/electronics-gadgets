@@ -1,30 +1,273 @@
-.chat-window {
-    height: 300px;
-    border: 1px solid #ccc;
+$background-color: #121212; // Dark background
+$chat-bg-color: #1e1e1e; // Slightly lighter background for the chat box
+$message-user-color: #d7dadf; // Soft lavender for user messages
+$message-system-color: #072724; // Teal for system messages
+$text-color: #1f1f27; // Light grey for text
+$btn-primary-bg: #3700b3; // Deep purple for primary buttons
+$btn-clear-bg: #cf6679; // Coral for clear chat button
+$btn-hover-primary-bg: #6200ee; // Lighter purple for hover
+$btn-hover-clear-bg: #ff1744; // Darker coral for hover
+$border-radius: 10px;
+$scrollbar-width: 8px;
+$btn-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+$chatbox-padding: 20px; // Padding inside chatbox
+
+// Background image settings
+$background-image: url("/images/ChatBackground.jpg");
+$background-size: cover;
+$background-position: center;
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: $background-image;
+  background-size: $background-size;
+  background-position: $background-position;
+  background-attachment: fixed; // Keeps the background image fixed
+}
+
+.navbar {
+  background-color: rgba(33, 33, 33, 0.9); // Semi-transparent dark background
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+
+  h1 {
+    margin: 0;
+    font-size: 1.8em;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+}
+
+.container {
+  margin-top: 80px; // Adjusted for navbar height
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+
+  .chat-box {
+    background: $chat-bg-color;
+    border: 1px solid #333;
+    border-radius: $border-radius;
+    box-shadow: $btn-shadow;
+    height: 70vh; // Adjusted height for chatbox
+    overflow: hidden; // Hide overflow to control scrolling separately
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+
+    .messages {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: calc(100% - 80px); // Adjust to fit within chatbox height
+      overflow-y: auto; // Allow scrolling for messages
+
+      // Hide scrollbar for webkit browsers
+      &::-webkit-scrollbar {
+        width: $scrollbar-width;
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $text-color;
+        border-radius: $border-radius;
+      }
+
+      // Hide scrollbar for Firefox
+      scrollbar-width: thin;
+      scrollbar-color: $text-color transparent;
+    }
+
+    .message {
+      padding: 12px;
+      border-radius: $border-radius;
+      background: $message-user-color;
+      color: $text-color;
+      display: flex;
+      flex-direction: column;
+      animation: slideIn 0.5s ease-out;
+
+      strong {
+        margin-bottom: 6px;
+        color: $text-color;
+      }
+
+      &.system {
+        background: $message-system-color;
+      }
+    }
+  }
+
+  .form-inline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+
+    .form-control {
+      border-radius: $border-radius;
+      background: #333; // Darker input field
+      color: rgb(212, 212, 194);
+      border: 1px solid #444;
+      margin-right: 10px;
+      padding: 12px;
+      flex: 1; // Adjusts to take available space
+    }
+
+    .btn {
+      border-radius: $border-radius;
+      background: $btn-primary-bg;
+      color: #fff;
+      border: none;
+      box-shadow: $btn-shadow;
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease,
+        box-shadow 0.3s ease;
+      margin-left: 10px; // Space between input and button
+
+      &:hover {
+        background: $btn-hover-primary-bg;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  .button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+
+    .btn-info {
+      background: $btn-primary-bg;
+      border-radius: $border-radius;
+      color: #fff;
+      border: none;
+      box-shadow: $btn-shadow;
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease,
+        box-shadow 0.3s ease;
+
+      &:hover {
+        background: darken($btn-primary-bg, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    .btn-danger {
+      background: $btn-clear-bg;
+      border-radius: $border-radius;
+      color: #fff;
+      border: none;
+      box-shadow: $btn-shadow;
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease,
+        box-shadow 0.3s ease;
+
+      &:hover {
+        background: darken($btn-clear-bg, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  .summary {
+    background: $chat-bg-color;
+    border: 1px solid #333;
+    border-radius: $border-radius;
+    box-shadow: $btn-shadow;
+    padding: 15px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 900px;
+    overflow-y: auto; // Allow scrolling for summary content
+
+    h4 {
+      margin-bottom: 10px;
+      color: #f5e9e9;
+    }
+
+    pre {
+      margin: 0;
+      font-size: 0.9em;
+      color: lightblue;
+    }
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .container {
     padding: 10px;
-    overflow-y: scroll;
-    background: #f9f9f9;
-    margin-bottom: 10px;
 
-    .chat-messages {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+    .chat-box {
+      height: 60vh;
     }
 
-    .chat-message {
-        background: #007bff;
-        color: #fff;
-        padding: 10px;
-        border-radius: 5px;
+    .form-inline {
+      flex-direction: column;
+
+      .form-control {
         margin-bottom: 10px;
-        max-width: 70%;
+      }
+
+      .btn {
+        width: 100%;
+        margin-left: 0; // Remove margin for full-width button
+      }
     }
 
-    input[type="text"] {
+    .button-group {
+      flex-direction: column;
+
+      .btn-info,
+      .btn-danger {
         width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        margin-bottom: 10px;
+      }
     }
+  }
 }
