@@ -1,4 +1,4 @@
-# NextGenGadjets
+# NextGenGadgets
 
 A visually attractive webpage for the electronic gadget products. 
 
